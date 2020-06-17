@@ -50,6 +50,7 @@ namespace Zadatak_1
             long[] oddNums = new long[1000];
             Random rnd = new Random();
             long num = 0;
+            //loop for generating array with odd numbers
             for (int i = 0; i < oddNums.Length; i++)
             {
 
@@ -62,7 +63,7 @@ namespace Zadatak_1
 
 
             }
-
+            //writing matrix into file
             using (StreamWriter sw = new StreamWriter(file2))
             {
 
