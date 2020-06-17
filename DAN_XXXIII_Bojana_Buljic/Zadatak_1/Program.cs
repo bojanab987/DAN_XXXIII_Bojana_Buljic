@@ -20,7 +20,24 @@ namespace Zadatak_1
         /// <returns></returns>
         static int[,] IdentityMatrix()
         {
-            return new int[100, 100];
+            int[,] result = new int[100, 100];
+
+            using (StreamWriter sw = new StreamWriter(file1))
+            {
+                for (int i = 0; i < 100; ++i)
+                {
+                    for (int j = 0; j < 100; ++j)
+                    {
+                        if (i == j)
+                            sw.Write(result[i, j] = 1);
+
+                        else
+                            sw.Write(result[i, j] = 0);
+                    }
+                    sw.WriteLine();
+                }
+            }
+            return result;
 
         }
 
@@ -29,8 +46,33 @@ namespace Zadatak_1
         /// </summary>
         static void GetRandomNumbers()
         {
+            long[] oddNums = new long[1000];
+            Random rnd = new Random();
+            long num = 0;
+            for (int i = 0; i < oddNums.Length; i++)
+            {
 
-            
+                do
+                {
+                    num = rnd.Next(0, 10000);
+                    oddNums[i] = num;
+
+                } while (num % 2 == 0);
+
+
+            }
+
+            //writing matrix into file
+            using (StreamWriter sw = new StreamWriter(file2))
+            {
+
+                for (int i = 0; i < oddNums.Length; i++)
+                {
+
+                    sw.WriteLine(oddNums[i]);
+                }
+            }
+
         }
 
         /// <summary>
