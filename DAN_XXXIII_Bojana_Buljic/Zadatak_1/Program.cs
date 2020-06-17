@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Zadatak_1
@@ -40,7 +42,9 @@ namespace Zadatak_1
 
         }
 
-        //Method for thread2
+        /// <summary>
+        /// Method for generating 1000 random odd numbers and writing it into file FileByThread_22.txt
+        /// </summary>
         static void GetRandomNumbers()
         {
             long[] oddNums = new long[1000];
@@ -69,8 +73,10 @@ namespace Zadatak_1
                 }
             }
         }
+
         static void Main(string[] args)
         {
+
         }
     }
 }
